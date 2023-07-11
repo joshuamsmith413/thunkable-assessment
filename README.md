@@ -1,10 +1,24 @@
-# Getting Started with Create React App
+## Features included
+* button hover states
+* click plus button to see input field and enter a project
+* press enter to create a new project
+* new project will apear as the input disappears with a date and time 
+* clicking plus sign again will repeat previous steps with new items added at the top
+* each row can be editted(a new date and time will be added) and deleted with delete having a confirmation prompt
+* project state management is done with redux while lesser things are done with local state
+* Ant design was used for confirmation prompt
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Wish we had
+* more reusable components - several functions that are duplicated in components could easily be made into helper functions 
+* tests would have been nice but ran out of time
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+install node packages
 
 ### `npm start`
 
@@ -13,34 +27,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

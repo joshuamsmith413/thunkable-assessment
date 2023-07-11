@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "regular";
+  src: local("SourceSansPro"),
+  url("../fonts/source-sans-pro/SourceSansPro-Regular.otf") format("otf");
+}
+
+@font-face {
+  font-family: "semibold";
+  src: local("SourceSansPro"),
+  url("../fonts/source-sans-pro/SourceSansPro-Semibold.otf") format("otf");
+}
+
+body {
+  margin: 0;
+  font-family: "regular";
+  letter-spacing: .8px;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fff; 
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -1,0 +1,17 @@
+.list-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 800px;
+    height: 70px;
+    margin: 0 auto;
+    background: #FDFDFD;
+    border-top: 1px solid #0000001A;
+    border-bottom: 1px solid #0000001A;
+
+    .beaver-icon {
+        margin-left: 24px;
+        margin-right: 25px;
+    }
+}

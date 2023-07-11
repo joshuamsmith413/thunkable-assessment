@@ -1,0 +1,14 @@
+.form-input {
+    border-radius: 2px;
+    border: 1px solid #40A9FF;
+    width: 186px;
+    height: 30px;
+    font-size: 16px;
+    padding-left: 6px;
+    
+}
+input::placeholder {
+    color: #00000066;
+    padding-left: 8px;
+
+}
