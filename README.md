@@ -11,6 +11,7 @@
 ## Wish we had
 * more reusable components - some logic/funcitons are duplicated in components could easily be made into helper functions. Also some typography could've been simplified. The new project and edit project could be a single reusable component as well
 * tests would have been nice but ran out of time
+* types in redux
 
 ## Available Scripts
 
