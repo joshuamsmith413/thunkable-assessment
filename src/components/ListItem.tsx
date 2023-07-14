@@ -19,7 +19,6 @@ type Props = {
 }
 
 export default function ListItem({ project, index }: Props) {
-    const [hover, setHover] = useState<boolean>(false);
     const [editting, setEditting] = useState<boolean>(false);
     const [newName, setNewName] = useState<string>('');
     const [openConfirm, setOpenConfirm] = useState<boolean>(false);
@@ -27,12 +26,10 @@ export default function ListItem({ project, index }: Props) {
     const dispatch = useDispatch();
 
     const mouseOver = (e: MouseEvent<HTMLImageElement>, icon: string) => {
-        setHover(true);
         e.currentTarget.src = icon;
     }
 
     const mouseOut = (e: MouseEvent<HTMLImageElement>, icon: string) => {
-            setHover(false);
         e.currentTarget.src = icon;
     }
 
