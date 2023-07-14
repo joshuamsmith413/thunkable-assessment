@@ -8,10 +8,10 @@ import PlusSignHover from 'src/assets/PlusSignHover.svg';
 
 type TProps = {
     formShow: boolean;
-    setFormShow: Dispatch<SetStateAction<boolean>>;
+    setFormAndBackground: () => void;
 }
 
-export default function Header({ formShow, setFormShow }: TProps) {
+export default function Header({ formShow, setFormAndBackground }: TProps) {
     const [hover, setHover] = useState<boolean>(false);
 
     const mouseOver = (e: MouseEvent<HTMLImageElement>) => {
@@ -27,7 +27,7 @@ export default function Header({ formShow, setFormShow }: TProps) {
     }
 
     const handleClick = () => {
-        setFormShow(true);
+        setFormAndBackground();
     }
 
     return (

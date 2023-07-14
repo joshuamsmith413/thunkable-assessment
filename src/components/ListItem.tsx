@@ -80,7 +80,7 @@ export default function ListItem({ project, index }: Props) {
                         value={newName} onChange={(e) => setNewName(e.target.value)}
                         onKeyDown={(e) => handleKeyPress(e, index)}
                     /> 
-                    : <span className="project-title">{project.name}</span>
+                    : <span className="project-title">{project.name.substring(0, 16)}</span>
                 }
                 <img 
                     src={EditIcon} 

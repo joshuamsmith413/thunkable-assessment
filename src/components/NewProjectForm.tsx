@@ -23,7 +23,8 @@ export default function NewProjectForm({setFormShow}: Props) {
                     hour: "2-digit", 
                     minute: "2-digit", 
                     hour12: true 
-                }).replace(/at/g,'')
+                }).replace(/at/g,'');
+                
                 setProjectName('');
                 setFormShow(false);
             dispatch(addProject({ date: date, name: projectName }));

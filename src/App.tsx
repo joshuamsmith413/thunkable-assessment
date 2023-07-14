@@ -8,10 +8,16 @@ import ProjectList from './components/ProjectList';
 
 function App() {
   const [formShow, setFormShow] = useState<boolean>(false);
+  const [background, setBackground] = useState<boolean>(false);
+  
+  const setFormAndBackground = () => {
+    setFormShow(true);
+    setBackground(true);
+  }
 
   return (
-    <div className={`app ${formShow && 'hover'}`}>
-      <Header setFormShow={setFormShow} formShow={formShow} />
+    <div className={`app ${background && 'hover'}`}>
+      <Header setFormAndBackground={setFormAndBackground} formShow={formShow} />
       {formShow && <NewProjectForm setFormShow={setFormShow} />}
       <ProjectList /> 
     </div>
