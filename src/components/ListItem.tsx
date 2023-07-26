@@ -11,14 +11,14 @@ import DeleteHoverIcon from 'src/assets/DeleteIcon_Hover.svg';
 import 'src/styles/ProjectList.scss';
 
 type Props = {
-    index: number;
     project: {
+        id: number,
         name: string,
         date: string
     }
 }
 
-export default function ListItem({ project, index }: Props) {
+export default function ListItem({ project }: Props) {
     const [editting, setEditting] = useState<boolean>(false);
     const [newName, setNewName] = useState<string>('');
     const [openConfirm, setOpenConfirm] = useState<boolean>(false);
@@ -38,7 +38,7 @@ export default function ListItem({ project, index }: Props) {
         setNewName(project.name)
     }
 
-    const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>, index: number) => {
+    const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>, id: number) => {
         if (e.code === "Enter") {
             const date = new Date()
                 .toLocaleDateString('en-US', { 
@@ -50,7 +50,7 @@ export default function ListItem({ project, index }: Props) {
                     hour12: true 
                 }).replace(/at/g,'');
 
-                dispatch(editProject({ index: index, date: date, name: newName }));
+                dispatch(editProject({ id: project.id, date: date, name: newName }));
                 setEditting(false);
                 setNewName('');
         }
@@ -61,21 +61,22 @@ export default function ListItem({ project, index }: Props) {
         setOpenConfirm(true)
     }
 
-    const handleDelete = (index: number) => {
-        dispatch(deleteProject({index: index}));
+    const handleDelete = (id: number) => {
+        dispatch(deleteProject({id: id}));
         setOpenConfirm(false)
     }
 
     return (
-        <ListRow key={index} child={(
+        <ListRow child={(
             <div className="project-item-inner" >
                 {editting ? 
                     <input 
                         className="form-input"
                         type="text"
                         placeholder="Name your project"
-                        value={newName} onChange={(e) => setNewName(e.target.value)}
-                        onKeyDown={(e) => handleKeyPress(e, index)}
+                        value={newName} 
+                        onChange={(e) => setNewName(e.target.value)}
+                        onKeyDown={(e) => handleKeyPress(e, project.id)}
                     /> 
                     : <span className="project-title">{project.name.substring(0, 16)}</span>
                 }
@@ -85,7 +86,7 @@ export default function ListItem({ project, index }: Props) {
                     className="edit-icon"
                     onMouseOver={e => mouseOver(e, EditHoverIcon)}
                     onMouseOut={e => mouseOut(e, EditIcon)}
-                    onClick={() => handleEdit(index)}
+                    onClick={() => handleEdit(project.id)}
                 />
                 <span className="date">{project.date}</span>
                 <img 
@@ -102,7 +103,7 @@ export default function ListItem({ project, index }: Props) {
                     cancelText="No"
                     okText="Yes"
                     open={openConfirm}
-                    onConfirm={() => handleDelete(index)}
+                    onConfirm={() => handleDelete(project.id)}
                     onCancel={() => setOpenConfirm(false)}
                     />
             </div>

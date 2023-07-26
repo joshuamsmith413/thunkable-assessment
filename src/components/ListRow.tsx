@@ -4,13 +4,12 @@ import 'src/styles/ListRow.scss'
 
 type TProps = {
     child: ReactNode;
-    key?: number;
 }
 
-export default function ListRow({ child, key }: TProps) {
+export default function ListRow({ child }: TProps) {
 
     return (
-        <div key={key} className="list-row">
+        <div className="list-row">
             <img src={FormIcon} alt="beaver icon" className="beaver-icon"/>
             {child}
         </div>

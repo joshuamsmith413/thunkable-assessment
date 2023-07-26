@@ -9,9 +9,11 @@ export default function ProjectList() {
     return (
         <div className="project-list">
             {projects.length > 0 && 
-                projects.map((project: { name: string, date: string }, index: number) => {
+                projects.map((project: { name: string, date: string, id: number }) => {
                     return (
-                        <ListItem project={project} index={index} />           
+                        <div key={project.id}>
+                            <ListItem project={project} />           
+                        </div>
                     )
                 })
             }
